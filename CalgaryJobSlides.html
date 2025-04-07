@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calvin Xiang - Dasens AI Automation Intern Application</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --text-color: #333;
+            --light-color: #ecf0f1;
+        }
+        
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            height: 100%;
+            overflow: hidden;
+            color: var(--text-color);
+        }
+        
+        .slide-container {
+            height: 100vh;
+            width: 100vw;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 2rem;
+            box-sizing: border-box;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            background-color: white;
+        }
+        
+        .slide.active {
+            opacity: 1;
+            z-index: 1;
+        }
+        
+        .slide-header {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+        
+        .slide-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .slide-footer {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 0;
+            font-size: 0.8rem;
+            color: var(--primary-color);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+        
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--secondary-color);
+        }
+        
+        ul {
+            margin-left: 2rem;
+        }
+        
+        li {
+            margin-bottom: 0.8rem;
+            line-height: 1.4;
+        }
+        
+        .highlight {
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+        
+        .two-column {
+            display: flex;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+        
+        .column {
+            flex: 1;
+        }
+        
+        .controls {
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            z-index: 100;
+            display: flex;
+            gap: 10px;
+        }
+        
+        
+        .control-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .control-btn:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        .progress-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            height: 5px;
+            background-color: var(--secondary-color);
+            z-index: 100;
+            transition: width 0.3s ease-in-out;
+        }
+        
+        .experience-box {
+            background-color: var(--light-color);
+            border-left: 4px solid var(--secondary-color);
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .experience-title {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+        
+        .experience-company {
+            font-style: italic;
+            margin-bottom: 0.5rem;
+            color: var(--secondary-color);
+        }
+        
+        .skill-tag {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 0.3rem 0.6rem;
+            border-radius: 20px;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .skill-container {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <!-- Slide 1: Title -->
+        <div class="slide active" id="slide-1">
+            <div class="slide-header">
+                <h1>Calvin Xiang</h1>
+                <h2>AI Automation Intern Application</h2>
+            </div>
+            <div class="slide-content">
+                <div style="text-align: center;">
+                    <h3>University of Waterloo</h3>
+                    <p>Bachelor of Mathematics (2022-2027)</p>
+                    <!-- <p>Relevant coursework: Real Analysis, Optimization, Applied Linear Models, Mathematical Statistics, OOP</p> -->
+                    <div class="skill-container" style="justify-content: center;">
+                        <div class="skill-tag">AI Development</div>
+                        <div class="skill-tag">LLM Integration</div>
+                        <div class="skill-tag">Full-Stack Development</div>
+                        <div class="skill-tag">Automation</div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <div>calvin.xiang@uwaterloo.ca | (647)685-3863</div>
+                <div>github.com/calvinxiang | linkedin.com/in/calvinxiang</div>
+            </div>
+        </div>
+        
+        <!-- Slide 2: Professional Experience - Veryon -->
+        <div class="slide" id="slide-2">
+            <div class="slide-header">
+                <h2>Professional Experience</h2>
+            </div>
+            <div class="slide-content">
+                <div class="experience-box">
+                    <div class="experience-title">Software Engineer</div>
+                    <div class="experience-company">Veryon (Jan 2024 - Apr 2024, Sept 2024 - Dec 2024)</div>
+                    <ul>
+                        <li>Led the development of a mobile android app with <span class="highlight">.NET MAUI</span>, for offline airtracking</li>
+                        <li>Integrated SQLite for reliable offline data storage, ensuring functionality in low-connectivity environments</li>
+                        <li>Developed an <span class="highlight">AI-driven chat tool</span> using Python and Streamlit, enabling 300+ engineers to efficiently edit 10,000+ maintenance documents from AWS S3</li>
+                        <li>Optimized document retrieval by 70% with a PDF sourcing feature using <span class="highlight">AWS Kendra</span> for faster access</li>
+                        <li>Added a text-highlighting feature using <span class="highlight">LangChain NLP</span>, for faster navigation of technical documents</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <div>Calvin Xiang - Dasens AI Automation Intern Application</div>
+                <div>2/15</div>
+            </div>
+        </div>
+        
+        <!-- Slide 3: Professional Experience - Matrix Leap -->
+        <div class="slide" id="slide-3">
+            <div class="slide-header">
+                <h2>Professional Experience</h2>
+            </div>
+            <div class="slide-content">
+                <div class="experience-box">
+                    <div class="experience-title">Software Engineer</div>
+                    <div class="experience-company">Matrix Leap (Jan 2024 - Apr 2024)</div>
+                    <ul>
+                        <li>Designed <span class="highlight">calling agents using Grok</span>, currently utilized by Bland.ai, to automate over 200+ business workflows with voice-to-action capabilities</li>
+                        <li>Built a coding platform that integrated the <span class="highlight">Google Sheets API</span> to source questions, solutions, and metadata, paired with <span class="highlight">OpenAI LLMs</span> to provide personalized, real-time feedback</li>
+                        <li>Engineered a scalable <span class="highlight">FastAPI-based microservice</span> for automated grading of coding exercises, processing up to 1,000 submissions per minute with 99.8% accuracy</li>
+                        <li>Generated comprehensive weekly progress reports by developing a <span class="highlight">Supabase-backed leaderboard system</span> to track user achievements and offer tailored learning recommendations</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <div>Calvin Xiang - Dasens AI Automation Intern Application</div>
+                <div>3/15</div>
+            </div>
+        </div>
+        
+        <!-- Slide 4: Professional Experience - Equifax -->
+        <div class="slide" id="slide-4">
+            <div class="slide-header">
+                <h2>Professional Experience</h2>
+            </div>
+            <div class="slide-content">
+                <div class="experience-box">
+                    <div class="experience-title">Software Developer Jr.</div>
+                    <div class="experience-company">Equifax Canada Inc. (May 2023 - Aug 2023)</div>
+                    <ul>
+                        <li>Built scalable <span class="highlight">CI/CD pipelines with Jenkins</span>, improving deployment efficiency and reducing release cycles</li>
+                        <li>Helped with the migration of 100+ TB of client data from IBM AS/400 Servers to <span class="highlight">GCP</span></li>
+                        <li>Automated data transfers using optimized <span class="highlight">bash scripts</span>, reducing processing time</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <div>Calvin Xiang - Dasens AI Automation Intern Application</div>
+                <div>4/15</div>
+            </div>
+        </div>
+        
+        <!-- Slide 5: Project - AI Customer Support Plugin -->
+        <div class="slide" id="slide-5">
+            <div class="slide-header">
+                <h2>Relevant Projects</h2>
+            </div>
+            <div class="slide-content">
+                <div class="experience-box">
+                    <div class="experience-title">AI Customer Support Plugin</div>
+                    <ul>
+                        <li>Designed an <span class="highlight">AI chat widget</span> using React and Flask, delivering prompt and efficient customer support</li>
+                        <li>Dynamically extracts and utilizes up-to-date product and customer information with <span class="highlight">real-time data collection pipelines</span> from ScrapeGraphAI, allowing for context-aware interactions</li>
+                        <li>Integrated a <span class="highlight">vector database using PineconeDB</span> to store and retrieve semantic data efficiently, reducing query latency and enhancing response accuracy</li>
+                    </ul>
+                </div>
+                <div style="margin-top: 1rem;">
+                    <h3>Relevance to Dasens:</h3>
+                    <ul>
+                        <li>Experience with <span class="highlight">AI-driven automation</span> for customer interactions</li>
+                        <li>Implementation of <span class="highlight">vector databases</span> for efficient information retrieval</li>
+                        <li>Development of <span class="highlight">real-time data pipelines</span> for context-aware AI applications</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <div>Calvin Xiang - Dasens AI Automation Intern Application</div>
+                <div>5/15</div>
+            </div>
+        </div>
+        
+        <!-- Slide 6: Project - Memora -->
+        <div class="slide" id="slide-6">
+            <div class="slide-header">
+                <h2>Relevant Projects</h2>
+            </div>
+            <div class="slide-content">
+                <div class="experience-box">
+                    <div class="experience-title">Memora: Spaced Repetition Flashcard App</div>
+                    <ul>
+                        <li>Developed a cross-platform mobile app with Flutter to optimize vocabulary retention using a <span class="highlight">custom algorithm</span> that adjusts content based on user performance metrics</li>
+                        <li>Redesigned the SM2 spaced repetition algorithm to incorporate <span class="highlight">performance analytics</span>, enabling dynamic interval scaling to prioritize challenging content</li>
+                        <li>Added a feature leveraging <span class="highlight">NLP (spaCy)</span> to auto-generate example sentences</li>
+                        <li>Crafted a <span class="highlight">visual analytics dashboard</span> to display retention trends, mastery milestones, and weak points</li>
+                    </ul>
+                </div>
+                <div style="margin-top: 1rem;">
+                    <h3>Relevance to Dasens:</h3>
+                    <ul>
+                        <li>Experience with <span class="highlight">algorithm optimization</span> and performance analytics</li>
+                        <li>Implementation of <span class="highlight">NLP technologies</span> for content generation</li>
+                        <li>Development of <span class="highlight">data visualization</span> for performance tracking</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <div>Calvin Xiang - Dasens AI Automation Intern Application</div>
+                <div>6/15</div>
+            </div>
+        </div>
+        
+        <!-- Slide 7: Skills Alignment - AI-based Digital Marketing Automation -->
+        <div class="slide" id="slide-7">
+            <div class="slide-header">
+                <h2>Skills Alignment with Dasens Requirements</h2>
+            </div>
+            <div class="slide-content">
+                <h3>AI-based Digital Marketing Automation</h3>
+                <div class="two-column">
+                    <div class="column">
+                        <h4>Dasens Requirements:</h4>
+                        <ul>
+                            <li>Develop intelligent agents for personalized marketing campaigns</li>
+                            <li>Automate audience segmentation and A/B testing</li>
+                            <li>Implement campaign analytics using AI</li>
+                        </ul>
+                    </div>
+                    <div class="column">
+                        <h4>My Relevant Experience:</h4>
+                        <ul>
+                            <li>Designed <span class="highlight">calling agents using Grok</span> to automate business workflows</li>
+                            <li>Developed <span class="highlight">Supabase-backed leaderboard system</span> for user analytics</li>
+                            <li>Created <span class="highlight">visual analytics dashboard</span> for performance tracking in Memora</li>
+                            <li>Built <span class="highlight">AI chat widget</span> for customer support with context-aware interactions</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <div>Calvin Xiang - Dasens AI Automation Intern Application</div>
+                <div>7/15</div>
+            </div>
+        </div>
+        
+        <!-- Slide 8: Skills Alignment - SR&ED Automation -->
+        <div class="slide" id="slide-8">
+            <div class="slide-header">
+                <h2>Skills Alignment with Dasens Requirements</h2>
+            </div>
+            <div class="slide-content">
+                <h3>SR&ED Automation</h3>
+                <div class="two-column">
+                    <div class="column">
+                        <h4>Dasens Requirements:</h4>
+                        <ul>
+                            <li>Collaborate on systems that automatically identify eligible R&D activities</li>
+                            <li>Draft SR&ED documentation using AI</li>
+                            <li>Integrate AI models to extract and interpret key scientific and technical data</li>
+                        </ul>
+                    </div>
+                    <div class="column">
+                        <h4>My Relevant Experience:</h4>
+                        <ul>
+                            <li>Developed <span class="highlight">AI-driven chat tool</span> for engineers to efficiently edit maintenance documents</li>
+                            <li>Optimized document retrieval using <span class="highlight">AWS Kendra</span> for faster access</li>
+                            <li>Implemented <span class="highlight">text-highlighting feature using LangChain NLP</span> for technical document navigation</li>
+                            <li>Integrated <span class="highlight">vector database (PineconeDB)</span> for efficient semantic data retrieval</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <div>Calvin Xiang - Dasens AI Automation Intern Application</div>
+                <div>8/15</div>
+            </div>
+        </div>
+        
+        <!-- Slide 9: Skills Alignment - IP Drafting & Management -->
+        <div class="slide" id="slide-9">
+            <div class="slide-header">
+                <h2>Skills Alignment with Dasens Requirements</h2>
+            </div>
+            <div class="slide-content">
+                <h3>IP Drafting & Management</h3>
+                <div class="two-column">
+                    <div class="column">
+                        <h4>Dasens Requirements:</h4>
+                        <ul>
+                            <li>Build tools to automate IP claim generation using AI-driven pipelines</li>
+                            <li>Apply ontology-based classification for prior art analysis</li>
+                            <li>Implement reasoning for portfolio management</li>
+                        </ul>
+                    </div>
+                    <div class="column">
+                        <h4>My Relevant Experience:</h4>
+                        <ul>
+                            <li>Built a coding platform with <span class="highlight">OpenAI LLMs</span> for personalized, real-time feedback</li>
+                            <li>Engineered <span class="highlight">FastAPI-based microservice</span> for automated assessment with high accuracy</li>
+                            <li>Implemented <span class="highlight">real-time data collection pipelines</span> for context-aware AI applications</li>
+                            <li>Experience with <span class="highlight">NLP technologies</span> for content generation and analysis</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <div>Calvin Xiang - Dasens AI Automation Intern Application</div>
+                <div>9/15</div>
+            </div>
+        </div>
+        
+        <!-- Slide 10: Skills Alignment - Ontology-Based Reasoning -->
+        <div class="slide" id="slide-10">
+            <div class="slide-header">
+                <h2>Skills Alignment with Dasens Requirements</h2>
+            </div>
+            <div class="slide-content">
+                <h3>Ontology-Based Reasoning & Framework Development</h3>
+                <div class="two-column">
+                    <div class="column">
+                        <h4>Dasens Requirements:</h4>
+                        <ul>
+                            <li>Develop or refine ontologies for R&D, IP, grants, and marketing domains</li>
+                            <li>Integrate reasoning engines and AI pipelines for semantic understanding</li>
+                            <li>Implement content generation frameworks (RAG + Ontology + LLM)</li>
+                        </ul>
+                    </div>
+                    <div class="column">
+                        <h4>My Relevant Experience:</h4>
+                        <ul>
+                            <li>Redesigned <span class="highlight">spaced repetition algorithm</span> to incorporate performance analytics</li>
+                            <li>Integrated <span class="highlight">LangChain NLP</span> for text highlighting and analysis</li>
+                            <li>Implemented <span class="highlight">vector database (PineconeDB)</span> for semantic data retrieval</li>
+                            <li>Experience with <span class="highlight">OpenAI LLMs</span> and <span class="highlight">Grok</span> for AI applications</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <div>Calvin Xiang - Dasens AI Automation Intern Application</div>
+                <div>10/15</div>
+            </div>
+        </div>
+        
+        <!-- Slide 11: Technical Skills -->
+        <div class="slide" id="slide-11">
+            <div class="slide-header">
+                <h2>Technical Skills</h2>
+            </div>
+            <div class="slide-content">
+                <div class="two-column">
+                    <div class="column">
+                        <h3>Languages</h3>
+                        <div class="skill-container">
+                            <div class="skill-tag">Python</div>
+                            <div class="skill-tag">Java</div>
+                            <div class="skill-tag">C/C++</div>
+                            <div class="skill-tag">JavaScript</div>
+                            <div class="skill-tag">TypeScript</div>
+                            <div class="skill-tag">Go</div>
+                            <div class="skill-tag">Dart</div>
+                            <div class="skill-tag">SQL</div>
+                            <div class="skill-tag">HTML/CSS</div>
+                        </div>
+                        
+                        <h3>Frameworks & Libraries</h3>
+                        <div class="skill-container">
+                            <div class="skill-tag">React</div>
+                            <div class="skill-tag">Node.js</div>
+                            <div class="skill-tag">Next.js</div>
+                            <div class="skill-tag">FastAPI</div>
+                            <div class="skill-tag">Streamlit</div>
+                            <div class="skill-tag">.NET MAUI</div>
+                            <div class="skill-tag">LangChain</div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <h3>Tools & Platforms</h3>
+                        <div class="skill-container">
+                            <div class="skill-tag">AWS/GCP</div>
+                            <div class="skill-tag">Docker/Kubernetes</div>
+                            <div class="skill-tag">Jenkins</div>
+                            <div class="skill-tag">Git</div>
+                            <div class="skill-tag">Supabase/SQLite</div>
+                            <div class="skill-tag">Postman</div>
+                            <div class="skill-tag">Bash</div>
+                        </div>
+                        
+                        <h3>AI/ML</h3>
+                        <div class="skill-container">
+                            <div class="skill-tag">OpenAI</div>
+                            <div class="skill-tag">Grok</div>
+                            <div class="skill-tag">Anthropic</div>
+                            <div class="skill-tag">Llama3</div>
+                            <div class="skill-tag">HuggingFace</div>
+                            <div class="skill-tag">spaCy</div>
+                            <div class="skill-tag">PineconeDB</div>
+                            <div class="skill-tag">AWS SageMaker</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <div>Calvin Xiang - Dasens AI Automation Intern Application</div>
+                <div>11/15</div>
+            </div>
+        </div>
+        
+        <!-- Slide 12: Why Dasens? -->
+        <div class="slide" id="slide-12">
+            <div class="slide-header">
+                <h2>Why Dasens?</h2>
+            </div>
+            <div class="slide-content">
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <h3>Passion for AI-Powered Innovation</h3>
+                    <p>I am excited about Dasens' mission to revolutionize SR&ED tax credits and innovation management through AI-powered solutions. My experience in developing AI applications aligns perfectly with Dasens' focus on creating intelligent systems for automation.</p>
+                    
+                    <h3>Relevant Experience</h3>
+                    <p>My work with LLMs, NLP, and automation tools has prepared me to contribute immediately to Dasens' projects in digital marketing automation, SR&ED claim drafting, and IP management.</p>
+                    
+                    <h3>Growth Opportunity</h3>
+                    <p>I see this internship as an opportunity to apply my technical skills in a domain that has significant impact on businesses' R&D efforts while expanding my knowledge of ontology-based reasoning and knowledge graphs.</p>
+                    
+                    <h3>Value I Can Bring</h3>
+                    <p>I can contribute to Dasens by leveraging my experience in AI development, automation, and data processing to help build more efficient and effective solutions for your clients.</p>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <div>Calvin Xiang - Dasens AI Automation Intern Application</div>
+                <div>12/15</div>
+            </div>
+        </div>
+        
+        <!-- Slide 13: Thank You -->
+        <div class="slide" id="slide-13">
+            <div class="slide-header">
+                <h2>Thank You</h2>
+            </div>
+            <div class="slide-content" style="text-align: center;">
+                <h1>Thank You for Your Consideration</h1>
+                <p style="font-size: 1.2rem; margin-top: 2rem;">I look forward to the opportunity to contribute to Dasens' innovative AI solutions</p>
+                <div style="margin-top: 3rem;">
+                    <h3>Contact Information</h3>
+                    <p>Email: calvin.xiang@uwaterloo.ca</p>
+                    <p>Phone: (647) 685-3863</p>
+                    <p>GitHub: github.com/calvinxiang</p>
+                    <p>LinkedIn: linkedin.com/in/calvinxiang</p>
+                </div>
+            </div>
+            <div class="slide-footer">
+                <div>Calvin Xiang - Dasens AI Automation Intern Application</div>
+                <div>13/15</div>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <button class="control-btn" id="prev-btn">Previous</button>
+            <button class="control-btn" id="next-btn">Next</button>
+        </div>
+        
+        <div class="progress-bar" id="progress-bar"></div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.slide');
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+            const progressBar = document.getElementById('progress-bar');
+            let currentSlide = 0;
+            
+            // Initialize progress bar
+            updateProgressBar();
+            
+            // Event listeners for buttons
+            prevBtn.addEventListener('click', showPreviousSlide);
+            nextBtn.addEventListener('click', showNextSlide);
+            
+            // Keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'ArrowRight' || e.key === ' ') {
+                    showNextSlide();
+                } else if (e.key === 'ArrowLeft') {
+                    showPreviousSlide();
+                }
+            });
+            
+            function showSlide(index) {
+                // Hide all slides
+                slides.forEach(slide => {
+                    slide.classList.remove('active');
+                });
+                
+                // Show the current slide
+                slides[index].classList.add('active');
+                
+                // Update progress bar
+                updateProgressBar();
+            }
+            
+            function showNextSlide() {
+                if (currentSlide < slides.length - 1) {
+                    currentSlide++;
+                    showSlide(currentSlide);
+                }
+            }
+            
+            function showPreviousSlide() {
+                if (currentSlide > 0) {
+                    currentSlide--;
+                    showSlide(currentSlide);
+                }
+            }
+            
+            function updateProgressBar() {
+                const progress = ((currentSlide + 1) / slides.length) * 100;
+                progressBar.style.width = `${progress}%`;
+            }
+        });
+    </script>
+</body>
+</html>
